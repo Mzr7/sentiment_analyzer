@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    text-align: center;
+    padding: 40px;
+}
+
+textarea {
+    width: 60%;
+    height: 120px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 25px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.result {
+    background: #fff;
+    padding: 20px;
+    margin-top: 30px;
+    display: inline-block;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.clear-btn {
+    background-color: #6c757d;
+    margin-left: 10px;
+}
+
+.clear-btn:hover {
+    background-color: #5a6268;
+}

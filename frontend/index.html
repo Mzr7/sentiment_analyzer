@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Analysis App</title>
+
+    <!-- Link to static CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Sentiment Analysis Using TextBlob</h1>
+
+    <form method="POST">
+        <textarea 
+            id="textInput" 
+            name="text" 
+            placeholder="Enter your text here...">{{ text }}</textarea><br>
+
+        <button type="submit">Analyze Sentiment</button>
+        <button type="button" class="clear-btn" onclick="clearForm()">Clear</button>
+    </form>
+
+    {% if sentiment %}
+    <div class="result">
+        <h3>Result</h3>
+        <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+        <p><strong>Polarity:</strong> {{ polarity }}</p>
+        <p><strong>Subjectivity:</strong> {{ subjectivity }}</p>
+    </div>
+    {% endif %}
+
+    <script>
+        function clearForm() {
+            // Clear textarea
+            document.getElementById("textInput").value = "";
+
+            // Remove result box if it exists
+            const resultBox = document.querySelector(".result");
+            if (resultBox) {
+                resultBox.remove();
+            }
+        }
+    </script>
+
+</body>
+</html>
